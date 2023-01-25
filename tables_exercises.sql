@@ -13,5 +13,5 @@ SELECT * FROM employees;
 SELECT * FROM departments;
 
 
--- What is the relationship between the employees and the departments tables? Can't find a realationship. 
+-- What is the relationship between the employees and the departments tables? Both have an emp_no. 
 SHOW CREATE TABLE dept_manager;
