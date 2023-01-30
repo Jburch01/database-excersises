@@ -26,13 +26,15 @@ SELECT * FROM employees WHERE hire_date LIKE '199%' and birth_date LIKE '%12-25%
  ORDER BY birth_date DESC, hire_date DESC; -- Youngest hired first Douandi Pettis 
  
  -- FUNCTION EXERCISES
+ USE employees;
 
 SELECT CONCAT(first_name, ' ', last_name) AS full_name FROM employees WHERE last_name LIKE 'e%E';
 SELECT UPPER(CONCAT(first_name, ' ', last_name)) AS full_name FROM employees WHERE last_name LIKE 'e%E';
 
-SELECT DateDIFF(hire_date, now()) FROM employees WHERE hire_date LIKE '199%' AND birth_date LIKE '%12-25%';
+SELECT DateDIFF(now(), hire_date) AS days_worked_for FROM employees WHERE hire_date LIKE '199%' AND birth_date LIKE '%12-25%';
 
-SELECT  min(salary), max(salary) FROM salaries;
+SELECT  min(salary), max(salary) FROM salaries
+WHERE to_date = '9999-01-01';
 
 SELECT lower(CONCAT(SUBSTR(first_name, 1, 1),
  SUBSTR(last_name, 1, 4),
@@ -46,7 +48,6 @@ birth_date
 FROM employees
 LIMIT 10;
 
- 
 
 
 
